@@ -10,7 +10,7 @@ import { sendMessage } from "./discord";
 dotenv.config();
 
 const app = express();
-const port = 3000;
+const port = process.env.PORT || 3000;
 const webhook = new LinearWebhooks(process.env.LINEAR_WEBHOOK_SECRET as string);
 const allowedIps = ["35.231.147.226", "35.243.134.228"];
 

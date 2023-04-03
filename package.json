@@ -1,12 +1,12 @@
 {
   "name": "lineard",
   "version": "1.0.0",
-  "main": "index.js",
-  "types": "index.d.ts",
+  "main": "dist/index.js",
   "private": true,
   "scripts": {
     "build": "tsc",
-    "dev": "nodemon --watch src api/index.ts"
+    "dev": "nodemon --watch src api/index.ts",
+    "start": "node dist/api/index.js"
   },
   "repository": {
     "type": "git",
