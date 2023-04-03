@@ -34,5 +34,9 @@ export async function sendMessage(data: any) {
   const channel = client.channels.cache.get(
     process.env.DISCORD_CHANNEL_ID as string
   ) as TextChannel;
-  channel.send({ embeds: [message] });
+  try {
+    channel.send({ embeds: [message] });
+  } catch (error) {
+    console.warn(`Error sending message to discord: ${data}`);
+  }
 }

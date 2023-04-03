@@ -31,7 +31,6 @@ app.use(
     if (!allowedIps.includes(senderIp as string))
       res.send("Unauthorized").status(401);
     else {
-      console.log("Verification Successful");
       next();
     }
   }
