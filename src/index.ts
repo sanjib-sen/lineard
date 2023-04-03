@@ -11,11 +11,7 @@ dotenv.config();
 const app = express();
 const port = 3000;
 const webhook = new LinearWebhooks(process.env.LINEAR_WEBHOOK_SECRET as string);
-
-app.use(express.json());
-
-// Parse the request body
-app.use(bodyParser.json());
+const allowedIps = ["35.231.147.226", "35.243.134.228"];
 
 // Use it in the webhook handler. Example with Express:
 app.use(
@@ -30,8 +26,13 @@ app.use(
     },
   }),
   (req, res, next) => {
-    console.log("Verification Successful");
-    next();
+    const senderIp = req.headers["x-forwarded-for"];
+    if (!allowedIps.includes(senderIp as string))
+      res.send("Unauthorized").status(401);
+    else {
+      console.log("Verification Successful");
+      next();
+    }
   }
 );
 
