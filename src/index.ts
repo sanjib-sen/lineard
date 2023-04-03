@@ -6,6 +6,7 @@ import {
   LINEAR_WEBHOOK_TS_FIELD,
 } from "@linear/sdk";
 import * as dotenv from "dotenv";
+import { sendMessage } from "./discord";
 dotenv.config();
 
 const app = express();
@@ -39,7 +40,7 @@ app.use(
 app.post("/webhooks/linear-updates", (req, res) => {
   const payload = req.body;
   const { action, data, type, createdAt } = payload;
-  console.log(data);
+  sendMessage(payload);
   res.sendStatus(200);
 });
 

@@ -1,5 +1,5 @@
 {
-  "name": "linear-discord-bot",
+  "name": "lineard",
   "version": "1.0.0",
   "main": "src/index.js",
   "private": true,
@@ -31,6 +31,7 @@
   "dependencies": {
     "@linear/sdk": "^2.6.0",
     "body-parser": "^1.20.2",
+    "discord.js": "^14.9.0",
     "dotenv": "^16.0.3",
     "express": "^4.18.2"
   }
