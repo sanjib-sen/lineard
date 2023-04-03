@@ -1,12 +1,12 @@
 {
   "name": "lineard",
   "version": "1.0.0",
-  "main": "src/index.js",
+  "main": "index.js",
+  "types": "index.d.ts",
   "private": true,
   "scripts": {
     "build": "tsc",
-    "dev": "nodemon --watch src src/index.ts",
-    "lint": "eslint src --ext .ts"
+    "dev": "nodemon --watch src api/index.ts"
   },
   "repository": {
     "type": "git",

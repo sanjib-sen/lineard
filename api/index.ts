@@ -37,9 +37,7 @@ app.use(
 );
 
 app.post("/webhooks/linear-updates", (req, res) => {
-  const payload = req.body;
-  const { action, data, type, createdAt } = payload;
-  sendMessage(payload);
+  sendMessage(req.body);
   res.sendStatus(200);
 });
 
