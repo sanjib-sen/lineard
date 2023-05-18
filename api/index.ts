@@ -16,7 +16,7 @@ const allowedIps = ["35.231.147.226", "35.243.134.228"];
 
 // Use it in the webhook handler. Example with Express:
 app.use(
-  "/webhooks/linear-updates",
+  "/webhooks/linear",
   bodyParser.json({
     verify: (req, res, buf) => {
       webhook.verify(
