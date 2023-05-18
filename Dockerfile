@@ -1,7 +1,7 @@
-ARG LINEAR_WEBHOOK_SECRET
-ARG DISCORD_TOKEN
-ARG DISCORD_CHANNEL_ID
-ARG PORT
+# ARG LINEAR_WEBHOOK_SECRET
+# ARG DISCORD_TOKEN
+# ARG DISCORD_CHANNEL_ID
+# ARG PORT
 
 FROM node:alpine as build
 
@@ -15,7 +15,7 @@ RUN npm install
 
 COPY --chown=node:node . .
 
-RUN npm run build
+RUN npm run build && npm prune --production
 
 
 
