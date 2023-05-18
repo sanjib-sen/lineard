@@ -19,7 +19,7 @@ client.once(Events.ClientReady, (c) => {
 client.login(process.env.DISCORD_TOKEN as string);
 
 export async function sendMessage(data: any) {
-  const date = new Date(data.createdAt);
+  const date = new Date(data.createdAt?.toString() || Date.now());
   const message = new EmbedBuilder()
     .setColor(0x0099ff)
     .setTitle(

@@ -1,0 +1,11 @@
+node_modules
+npm-debug.log
+Dockerfile
+.dockerignore
+.env
+dist
+.gitignore
+fly.toml
+README.md
+pnpm-lock.yaml
+.git
