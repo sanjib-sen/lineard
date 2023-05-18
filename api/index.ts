@@ -37,6 +37,7 @@ app.use(
 );
 
 app.post("/webhooks/linear", (req, res) => {
+  console.log("Webhook Received");
   sendMessage(req.body);
   res.sendStatus(200);
 });

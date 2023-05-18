@@ -6,9 +6,10 @@
 app = "lineard"
 primary_region = "sin"
 
-[http_service]
+[build]
+  builder = "heroku/buildpacks:20"
+
+[[services]]
   internal_port = 3000
-  force_https = true
-  auto_stop_machines = true
-  auto_start_machines = true
-  min_machines_running = 0
+  auto_stop_machines = false
+  auto_start_machines = false
