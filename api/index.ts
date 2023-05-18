@@ -36,7 +36,7 @@ app.use(
   }
 );
 
-app.post("/webhooks/linear-updates", (req, res) => {
+app.post("/webhooks/linear", (req, res) => {
   sendMessage(req.body);
   res.sendStatus(200);
 });
