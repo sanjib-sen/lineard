@@ -7,6 +7,7 @@ app = "lineard"
 primary_region = "sin"
 
 [http_service]
+[http_service]
   internal_port = 3000
   force_https = true
   auto_start_machines = true

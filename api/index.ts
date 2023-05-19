@@ -32,6 +32,6 @@ app.post("/webhooks/linear", (req, res) => {
   res.sendStatus(200);
 });
 
-app.listen(port, () =>
-  console.log(`Linear webhook consumer listening on port ${port}!`)
-);
+app.listen(port, () => {
+  console.log(`Linear webhook consumer listening on port ${port}!`);
+});
