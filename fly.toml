@@ -1,4 +1,4 @@
-# fly.toml app configuration file generated for lineard on 2023-05-18T14:07:27+06:00
+# fly.toml app configuration file generated for lineard on 2023-05-19T19:01:40+06:00
 #
 # See https://fly.io/docs/reference/configuration/ for information about how to use this file.
 #
@@ -6,10 +6,11 @@
 app = "lineard"
 primary_region = "sin"
 
-[build]
-  builder = "heroku/buildpacks:20"
-
-[[services]]
+[http_service]
   internal_port = 3000
-  auto_stop_machines = false
-  auto_start_machines = false
+  force_https = true
+  auto_start_machines = true
+  [http_service.concurrency]
+    type = "requests"
+    hard_limit = 250
+    soft_limit = 200
